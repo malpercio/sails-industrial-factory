@@ -16,7 +16,7 @@ Simple model factory for Sails.js with Sequelize inspired by Sails Factory
 Define a factory by giving it a name and an optional model name. The factory name will be the default model name (parent model or the name itself) if model name is not provided.
 
 ```js
-var factory = require("sails-factory");
+var factory = require("sails-industrial-factory");
 
 factory.define("user")
   .attr("first_name", "First Name")
