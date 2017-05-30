@@ -1,6 +1,6 @@
 {
   "name": "sails-industrial-factory",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Simple model factory for Sails.js with Sequelize inspired by Sails Factory",
   "main": "index.js",
   "scripts": {

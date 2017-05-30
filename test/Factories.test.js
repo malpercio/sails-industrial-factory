@@ -88,7 +88,7 @@ describe('Factories test', function() {
       })
       .then((restaurant) => {
         (restaurant instanceof Sequelize.Instance).should.be.true();
-        return Restaurant.findAndCountAll({where:{name:"Mini3"}})
+        return Restaurant.findAndCountAll({where:{name:"Mini5"}})
       })
       .then((result) => {
         result.count.should.equal(1);
