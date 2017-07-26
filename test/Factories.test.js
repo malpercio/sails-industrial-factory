@@ -1,13 +1,9 @@
 const Promise = require('bluebird');
 const Sails = require('sails').Sails;
 const should = require('should');
-let factory;
+const faker = require('faker');
 
 describe('Factories test', function() {
-
-  beforeEach(() => {
-    factory = require('../index.js');
-  });
 
   it('should define', () => {
     return new Promise((resolve, reject) => {
@@ -35,6 +31,33 @@ describe('Factories test', function() {
       .then((table) => {
         (table instanceof Sequelize.Instance).should.be.true();
         return TableType.findAndCountAll({where:{name:"Mini"}})
+      })
+      .then((result) => {
+        result.count.should.equal(1);
+      })
+  });
+
+  it('should randomly create', () => {
+    factory.define('activeRandom', Restaurant)
+      .attr("name", faker.lorem.word);
+    return factory.create('activeRandom')
+      .then((restaurant) => {
+        (restaurant instanceof Sequelize.Instance).should.be.true();
+        return Restaurant.findAndCountAll({where:{name:restaurant.name}})
+      })
+      .then((result) => {
+        result.count.should.equal(1);
+      })
+  });
+
+  it('should randomly create and increment', () => {
+    factory.define('activeRandom', Restaurant)
+      .attr("name", faker.lorem.word, {auto_increment: 2});
+    return factory.create('activeRandom')
+      .then((restaurant) => {
+        (restaurant instanceof Sequelize.Instance).should.be.true();
+        restaurant.name.slice(-1).should.equal('1');
+        return Restaurant.findAndCountAll({where:{name:restaurant.name}})
       })
       .then((result) => {
         result.count.should.equal(1);
@@ -71,10 +94,8 @@ describe('Factories test', function() {
 
   it('should increment', () => {
     factory.define('active', Restaurant)
-      .attr("name", "Mini", {auto_increment:2})
-      .attr("active", true);
-    factory.define('inactive').parent('active')
-      .attr("active", false);
+      .attr("name", "Mini", {auto_increment:2});
+    factory.define('inactive').parent('active');
     return factory.create('inactive')
       .then((restaurant) => {
         (restaurant instanceof Sequelize.Instance).should.be.true();
@@ -88,7 +109,7 @@ describe('Factories test', function() {
       })
       .then((restaurant) => {
         (restaurant instanceof Sequelize.Instance).should.be.true();
-        return Restaurant.findAndCountAll({where:{name:"Mini5"}})
+        return Restaurant.findAndCountAll({where:{name:"Mini3"}})
       })
       .then((result) => {
         result.count.should.equal(1);

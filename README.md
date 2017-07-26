@@ -1,14 +1,22 @@
+[![forthebadge](http://forthebadge.com/images/badges/built-by-codebabes.svg)](https://jaque.me/)
+
+[![Stories in Progress](https://img.shields.io/waffle/label/malpercio/sails-industrial-factory/in%20progress.svg?style=flat)](https://waffle.io/malpercio/sails-industrial-factory)
 [![Build Status](https://david-dm.org/malpercio/sails-industrial-factory.svg)](https://travis-ci.org/malpercio/sails-industrial-factory)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/c988b9a0675b43ff964e76168b9975c3)](https://www.codacy.com/app/danielglezespinoza/sails-industrial-factory?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=malpercio/sails-industrial-factory&amp;utm_campaign=Badge_Grade)
+[![bitHound Overall Score](https://www.bithound.io/github/malpercio/sails-industrial-factory/badges/score.svg)](https://www.bithound.io/github/malpercio/sails-industrial-factory)
+[![bitHound Dependencies](https://www.bithound.io/github/malpercio/sails-industrial-factory/badges/dependencies.svg)](https://www.bithound.io/github/malpercio/sails-industrial-factory/master/dependencies/npm)
+[![dependencies Status](https://david-dm.org/malpercio/sails-industrial-factory/status.svg)](https://david-dm.org/malpercio/sails-industrial-factory)
 [![DevDependencies](https://david-dm.org/malpercio/sails-industrial-factory/dev-status.svg)](https://david-dm.org/malpercio/sails-industrial-factory)
 [![npm version](https://badge.fury.io/js/sails-industrial-factory.svg)](https://badge.fury.io/js/sails-industrial-factory)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/malpercio/sails-industrial-factory/master/LICENSE)
 
 # sails-industrial-factory
 Simple model factory for Sails.js with Sequelize inspired by Sails Factory
 
 ## Installation
-
+```
     npm install sails-industrial-factory
-
+```
 ## Usage
 
 ### Defining factories
@@ -185,8 +193,10 @@ before(function(done) {
     }
   }, function(err, sails) {
     if (sails) {
+      // -- make factories global to your tests
+      global.factory = require("sails-industrial-factory");
       //-- load factory definition files from test/factories
-      require("sails-factory").load();
+      factory.load();
     }
     done(err);
   });
@@ -198,3 +208,9 @@ To load factory files from different folder:
 ```js
 factory.load("/path/to/factories");
 ```
+
+## License
+[MIT](./LICENSE)
+
+
+[![NPM](https://nodei.co/npm/sails-industrial-factory.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/sails-industrial-factory/)

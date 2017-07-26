@@ -1,4 +1,4 @@
-const Factory = require('./lib/Factory');
+const Factory = require("./lib/Factory");
 
 function initialize(){
   return new Factory();

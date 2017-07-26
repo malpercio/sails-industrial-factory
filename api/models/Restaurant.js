@@ -4,17 +4,17 @@
  * @description :: Model aimed at representing a restaurant. I guess.
  */
 
- module.exports = {
+module.exports = {
 
-   attributes: {
-     name: {
-       type: Sequelize.STRING,
-       allowNull: false,
-     },
-     active: {
-       type: Sequelize.BOOLEAN,
-       allowNull: false,
-       defaultValue: false,
-     },
-   },
- };
+  attributes: {
+    name: {
+      type: Sequelize.STRING,
+      allowNull: false,
+    },
+    active: {
+      type: Sequelize.BOOLEAN,
+      allowNull: false,
+      defaultValue: false,
+    },
+  },
+};
