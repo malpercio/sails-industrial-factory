@@ -1,9 +1,9 @@
 [![forthebadge](http://forthebadge.com/images/badges/built-by-codebabes.svg)](https://jaque.me/)
 
 [![Stories in Progress](https://img.shields.io/waffle/label/malpercio/sails-industrial-factory/in%20progress.svg?style=flat)](https://waffle.io/malpercio/sails-industrial-factory)
-[![Build Status](https://david-dm.org/malpercio/sails-industrial-factory.svg)](https://travis-ci.org/malpercio/sails-industrial-factory)
+[![Build Status](https://travis-ci.org/malpercio/sails-industrial-factory.svg?branch=master)](https://travis-ci.org/malpercio/sails-industrial-factory)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/c988b9a0675b43ff964e76168b9975c3)](https://www.codacy.com/app/danielglezespinoza/sails-industrial-factory?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=malpercio/sails-industrial-factory&amp;utm_campaign=Badge_Grade)
-[![bitHound Overall Score](https://www.bithound.io/github/malpercio/sails-industrial-factory/badges/score.svg)](https://www.bithound.io/github/malpercio/sails-industrial-factory)
+[![bitHound Code](https://www.bithound.io/github/malpercio/sails-industrial-factory/badges/code.svg)](https://www.bithound.io/github/malpercio/sails-industrial-factory)
 [![bitHound Dependencies](https://www.bithound.io/github/malpercio/sails-industrial-factory/badges/dependencies.svg)](https://www.bithound.io/github/malpercio/sails-industrial-factory/master/dependencies/npm)
 [![dependencies Status](https://david-dm.org/malpercio/sails-industrial-factory/status.svg)](https://david-dm.org/malpercio/sails-industrial-factory)
 [![DevDependencies](https://david-dm.org/malpercio/sails-industrial-factory/dev-status.svg)](https://david-dm.org/malpercio/sails-industrial-factory)

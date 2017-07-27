@@ -20,7 +20,7 @@ describe('Factories test', function() {
       .attr("name", "Mini");
     return factory.build('mini')
       .then((table) => {
-        (table instanceof Sequelize.Instance).should.be.true();
+        (table instanceof TableType).should.be.true();
       })
   });
 
@@ -29,7 +29,7 @@ describe('Factories test', function() {
       .attr("name", "Mini");
     return factory.create('mini')
       .then((table) => {
-        (table instanceof Sequelize.Instance).should.be.true();
+        (table instanceof TableType).should.be.true();
         return TableType.findAndCountAll({where:{name:"Mini"}})
       })
       .then((result) => {
@@ -42,7 +42,7 @@ describe('Factories test', function() {
       .attr("name", faker.lorem.word);
     return factory.create('activeRandom')
       .then((restaurant) => {
-        (restaurant instanceof Sequelize.Instance).should.be.true();
+        (restaurant instanceof Restaurant).should.be.true();
         return Restaurant.findAndCountAll({where:{name:restaurant.name}})
       })
       .then((result) => {
@@ -55,7 +55,7 @@ describe('Factories test', function() {
       .attr("name", faker.lorem.word, {auto_increment: 2});
     return factory.create('activeRandom')
       .then((restaurant) => {
-        (restaurant instanceof Sequelize.Instance).should.be.true();
+        (restaurant instanceof Restaurant).should.be.true();
         restaurant.name.slice(-1).should.equal('1');
         return Restaurant.findAndCountAll({where:{name:restaurant.name}})
       })
@@ -72,7 +72,7 @@ describe('Factories test', function() {
       .attr("active", false);
     return factory.create('inactive')
       .then((restaurant) => {
-        (restaurant instanceof Sequelize.Instance).should.be.true();
+        (restaurant instanceof Restaurant).should.be.true();
         return Restaurant.findAndCountAll({where:{active:false}})
       })
       .then((result) => {
@@ -84,7 +84,7 @@ describe('Factories test', function() {
     factory.load();
     return factory.create('inactive')
       .then((restaurant) => {
-        (restaurant instanceof Sequelize.Instance).should.be.true();
+        (restaurant instanceof Restaurant).should.be.true();
         return Restaurant.findAndCountAll({where:{active:false}})
       })
       .then((result) => {
@@ -98,7 +98,7 @@ describe('Factories test', function() {
     factory.define('inactive').parent('active');
     return factory.create('inactive')
       .then((restaurant) => {
-        (restaurant instanceof Sequelize.Instance).should.be.true();
+        (restaurant instanceof Restaurant).should.be.true();
         return Restaurant.findAndCountAll({where:{name:"Mini1"}})
       })
       .then((result) => {
@@ -108,7 +108,7 @@ describe('Factories test', function() {
         return factory.create('active')
       })
       .then((restaurant) => {
-        (restaurant instanceof Sequelize.Instance).should.be.true();
+        (restaurant instanceof Restaurant).should.be.true();
         return Restaurant.findAndCountAll({where:{name:"Mini3"}})
       })
       .then((result) => {
